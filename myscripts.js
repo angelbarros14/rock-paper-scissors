@@ -15,13 +15,15 @@ function getComputerChoice() {
     }
 }
 
-
+/*
 // User Choice
 function getHumanChoice () {
     // Take the users choice (prompt)
     let pick = prompt("What's your pick?", "Rock");
     return pick;
 }
+
+*/
 
    // Players score
    let humanScore = 0;
@@ -61,7 +63,30 @@ function getHumanChoice () {
            }
        }
 
-// Play Game
+
+       let rock = document.querySelector("#rock");
+       rock.addEventListener("click", () => {
+        const computerChoice = getComputerChoice()
+        return playRound("Rock", computerChoice);
+        }
+        )      
+
+        let paper = document.querySelector("#paper");
+        paper.addEventListener("click", () => {
+         const computerChoice = getComputerChoice()
+         return playRound("Paper", computerChoice);
+         }
+         )      
+
+         let scissors = document.querySelector("#scissors");
+         scissors.addEventListener("click", () => {
+          const computerChoice = getComputerChoice()
+          return playRound("Scissors", computerChoice);
+          }
+          )      
+       
+       
+        /* Play Game
 function playGame() {
    for (let i = 0; i < 5; i++) { playRound(i);
     const humanSelection = getHumanChoice();
@@ -80,3 +105,4 @@ Your Score is: ${humanScore} | Computer Score is: ${computerScore}`);
 }
 
 playGame();
+*/
