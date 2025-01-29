@@ -10,7 +10,6 @@ function getComputerChoice() {
     }
 }
 
-
 function getHumanChoice () {
 
     let humanChoice = "";
@@ -45,6 +44,8 @@ function getHumanChoice () {
    function playRound (humanChoice, computerChoice) {
 
     const para = document.querySelector("p");
+    const result = document.querySelector("#result");
+
        if (humanChoice === computerChoice) {
            para.textContent=`It is a tie! You picked ${humanChoice}, Computer picked ${computerChoice}.`;
 
@@ -52,29 +53,15 @@ function getHumanChoice () {
                humanChoice == "Paper" && computerChoice == "Scissors" ||
                humanChoice == "Scissors" && computerChoice == "Rock") {
                computerScore+=1;
-               para.textContent=`You lose! ${computerChoice} beats ${humanChoice}.`
+               para.textContent=`You lose! ${computerChoice} beats ${humanChoice}.`;
 
        } else {
            humanScore+=1;
            para.textContent=`You win! ${humanChoice} beats ${computerChoice}.`;
            }
-
-           const container = document.querySelector("#container");
-
            
-           content.textContent = `The result is
-           \n Computer Score: ${computerScore} 
-           \n Player Score: ${humanScore}`;
-       
-           container.append(content);
-       }
-    
+           result.innerHTML = `Computer Score: ${computerScore} <br> Player Score: ${humanScore}` ;
 
+           }
 
-       
-function playGame() {
-    getHumanChoice();
-   
-}
-playGame();
-
+getHumanChoice();
